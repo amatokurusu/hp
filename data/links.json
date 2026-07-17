@@ -16,5 +16,11 @@
     "handle": "@amato_kurusu",
     "url": "https://x.com/amato_kurusu",
     "iconId": "icon-x"
+  },
+  {
+    "platform": "占い",
+    "handle": "今日の運勢を見る",
+    "url": "https://amato-fortune.vercel.app/",
+    "iconId": "icon-fortune"
   }
 ]
