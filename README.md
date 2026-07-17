@@ -1,7 +1,10 @@
-# キャラクター名 活動ホームページ
+# 来栖天人 活動ホームページ
 
 プレーンHTML/CSS/JSで構築した、GitHub Pages公開用のVtuber活動ホームページです。
 ビルドステップは不要で、ファイルを編集してそのままpushすれば公開されます。
+
+- 公開URL: https://amatokurusu.github.io/hp/
+- リポジトリ: https://github.com/amatokurusu/hp
 
 ## ローカルで確認する
 
@@ -9,35 +12,49 @@
 コンテンツが表示されません。以下のいずれかでローカルサーバーを起動してください。
 
 - VS Code拡張機能「Live Server」で `index.html` を開く
-- もしくはターミナルで `npx serve .` を実行
+- もしくはターミナルで `npx serve .` や `python -m http.server` を実行
 
 ## 日常的な更新方法
 
-以下の3ファイルを編集するだけで、レイアウトに触れずに内容を更新できます。
+以下のファイルを編集するだけで、レイアウトに触れずに内容を更新できます。JSON側は
+`no-store`で取得しているので、通常のリロードで反映されます。
 
-- `data/schedule.json` — 配信・動画スケジュール
-- `data/links.json` — SNSリンク一覧
-- `data/goods.json` — グッズ・ファンアート一覧（`tag` は `"official"` か `"fanart"`）
+- `data/schedule.json` — 配信・動画スケジュール（配列を空にすると「不定期開催」の案内文が表示されます）
+- `data/links.json` — SNSリンク一覧（表示順もこの配列の順番のまま反映されます）
+- `data/goods.json` — 公式グッズ一覧（`tag` は `"official"` 固定。画像・リンク・クレジットを追加/編集）
+- `data/friends.json` — FRIENDS一覧（アイコン画像・名前・リンク・一言紹介文）
+- `data/drive-config.json` — イラスト/ファンアートを自動取得するGoogleドライブのフォルダID・APIキー
 
-## 差し替えが必要な項目（公開前チェックリスト）
+### イラスト・ファンアートの更新について
 
-- [ ] `index.html` 内の「キャラクター名」をすべて実際の名前に置き換える
-- [ ] `assets/img/logo.svg` / `hero-illustration.svg` / `favicon.svg` を実際のイラストに差し替え
-- [ ] `assets/img/og-image.png`（1200×630程度）を追加し、`index.html` の `og:image` から参照されていることを確認
-- [ ] `css/variables.css` の `--color-primary` などをキャラクターカラーに変更
-- [ ] `index.html` 内のSNS・YouTubeチャンネルURLを実際のものに変更
-- [ ] `#schedule` 内のYouTube埋め込み `list=UUxxxxxxxxxxxxxxxxxxxxxx` を、実際のチャンネルの
-      アップロード再生リストID（チャンネルID `UCxxxxxxxx` の `UC` を `UU` に置き換えたもの）に変更
-- [ ] `data/goods.json` の `assets/img/goods/placeholder.svg` を実際の画像に差し替え
+`data/drive-config.json` で指定した2つのGoogleドライブフォルダ（イラスト用・ファンアート用）に
+画像を置くだけで、`illustration.html` / `fanart.html` に自動反映されます。コード変更は不要です。
 
-## GitHub Pagesへのデプロイ
+- ファンアートのファイル名は **「アーティスト名_amato.拡張子」**（例: `sion_amato.jpg`）にすると、
+  クレジット表記（`@sion`）が自動生成されます。
+- トップページの各カテゴリー（グッズ/イラスト/ファンアート）のプレビュー画像を特定の1枚に固定したい場合は、
+  `js/goods.js` の `CATEGORY_PREVIEW_IMAGE_OVERRIDES` を編集してください。
 
-1. このフォルダで `git init`
-2. GitHubに空のリポジトリを作成（例: `character-name-hp`）
-3. `git remote add origin <リポジトリURL>` → `git push -u origin main`
-4. リポジトリの Settings → Pages で、Source を「Deploy from a branch」、
-   branchを `main` / `/(root)` に設定
-5. 数分後、`https://<ユーザー名>.github.io/<リポジトリ名>/` で公開される
+### Google Drive APIキーについて
 
-独自ドメインを使う場合は、リポジトリ直下に `CNAME` ファイル（中身はドメイン名1行）を追加し、
-DNS側で `CNAME` レコードを `<ユーザー名>.github.io` に向けてください。
+`data/drive-config.json` のAPIキーはHTTPリファラー制限（Google Cloud Console側）で保護しています。
+公開ドメインやlocalhostを変更した場合は、Google Cloud Consoleの認証情報でキーの
+「ウェブサイトの制限」に新しいURLを追加してください。
+
+## サイト構成
+
+- `index.html` — トップページ（プロフィール／最新のPOST／スケジュール／イラスト・ファンアート・FRIENDS・グッズの導線／SNSリンク／お問い合わせ）
+- `goods.html` / `illustration.html` / `fanart.html` / `friends.html` — 各カテゴリーの一覧ページ
+- `css/variables.css` — 配色・フォント・余白などのデザイン変数（配色を変える場合はここだけ編集）
+
+## GitHub Pagesへのデプロイ（更新の反映方法）
+
+初回セットアップは完了済みです。以降の更新は以下だけで反映されます。
+
+```
+git add -A
+git commit -m "更新内容"
+git push
+```
+
+pushしてから数分でhttps://amatokurusu.github.io/hp/ に反映されます。
