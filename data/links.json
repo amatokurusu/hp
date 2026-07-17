@@ -1,0 +1,20 @@
+[
+  {
+    "platform": "Twitch",
+    "handle": "amatokurusu",
+    "url": "https://www.twitch.tv/amatokurusu",
+    "iconId": "icon-twitch"
+  },
+  {
+    "platform": "YouTube",
+    "handle": "来栖天人",
+    "url": "https://www.youtube.com/@kurusu-amato",
+    "iconId": "icon-youtube"
+  },
+  {
+    "platform": "X (Twitter)",
+    "handle": "@amato_kurusu",
+    "url": "https://x.com/amato_kurusu",
+    "iconId": "icon-x"
+  }
+]

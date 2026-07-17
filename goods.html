@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>グッズ - 来栖天人</title>
+  <meta name="description" content="Vtuber「来栖天人（くるすあまと）」の公式グッズ一覧。">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="assets/img/logo-wordmark-ja.png?v=3" alt="来栖天人 / kurusu amato">
+      </a>
+
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html#profile">PROFILE</a>
+        <a href="index.html#schedule">SCHEDULE</a>
+        <a href="index.html#illustration">ILLUSTRATION</a>
+        <a href="index.html#fanart">FANART</a>
+        <a href="index.html#friends">FRIENDS</a>
+        <a href="index.html#goods">GOODS</a>
+        <a href="index.html#links">LINKS</a>
+        <a href="index.html#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <a class="gallery-back" href="index.html#goods">← ホームに戻る</a>
+        <div class="section-heading reveal">
+          <h2>グッズ</h2>
+          <p>公式グッズを紹介しています</p>
+        </div>
+        <div class="masonry-grid" id="gallery-grid">
+          <p class="empty-state">読み込み中...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html#profile">PROFILE</a>
+        <a href="index.html#schedule">SCHEDULE</a>
+        <a href="index.html#illustration">ILLUSTRATION</a>
+        <a href="index.html#fanart">FANART</a>
+        <a href="index.html#friends">FRIENDS</a>
+        <a href="index.html#goods">GOODS</a>
+        <a href="index.html#links">LINKS</a>
+        <a href="index.html#contact">CONTACT</a>
+      </div>
+      <p>&copy; 2026 来栖天人. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initGoodsGallery } from "./js/goods.js";
+    import { initNavToggle } from "./js/nav.js";
+    import { observeReveals } from "./js/scroll-reveal.js";
+
+    initNavToggle();
+    observeReveals();
+    initGoodsGallery("gallery-grid", "official").then(observeReveals);
+  </script>
+</body>
+</html>

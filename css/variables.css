@@ -1,0 +1,59 @@
+/*
+  「来栖天人」テーマ: 黒を基調に、キャラクターの赤と金ロゴを差し色にしたパレット。
+  実際のキャラクターカラーが変わったら、このファイルの値だけを書き換えれば
+  サイト全体に反映される。
+*/
+:root {
+  /* --- ベースカラー（漆黒） --- */
+  --color-bg: #120a0c;
+  --color-bg-alt: #170c0e;
+  --color-bg-deep: #0a0506;
+
+  /* --- 赤（キャラクターのコート・瞳） --- */
+  --color-primary: #e0324a;
+  --color-primary-dark: #a8182f;
+  --color-primary-light: #ff6b7f;
+  --color-crimson: #7a1220;
+
+  /* --- 金の差し色（ロゴ） --- */
+  --color-accent: #e8c76f;
+  --color-accent-dark: #c9a24e;
+  --color-accent-light: #f5e2ab;
+
+  /* --- テキスト --- */
+  --color-text: #f6efec;
+  --color-text-muted: #b89b9d;
+
+  /* --- ガラス質感 --- */
+  --color-border: rgba(232, 199, 111, 0.18);
+  --color-border-strong: rgba(232, 199, 111, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-strong: rgba(255, 255, 255, 0.08);
+  --glass-blur: 18px;
+
+  --color-overlay: rgba(10, 5, 6, 0.72);
+
+  /* --- タイポグラフィ --- */
+  --font-heading: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  --font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+
+  /* --- 余白スケール --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  /* --- その他 --- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.55);
+  --glow-primary: 0 0 32px rgba(224, 50, 74, 0.45);
+  --glow-accent: 0 0 24px rgba(232, 199, 111, 0.35);
+  --container-width: 1120px;
+  --nav-height: 72px;
+}

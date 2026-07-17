@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a3a9e"/>
+      <stop offset="0.6" stop-color="#1c1436"/>
+      <stop offset="1" stop-color="#0c0918"/>
+    </linearGradient>
+    <linearGradient id="heroFigure" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f0fc"/>
+      <stop offset="1" stop-color="#c9b8f7"/>
+    </linearGradient>
+    <radialGradient id="heroGlow" cx="0.5" cy="0.35" r="0.5">
+      <stop offset="0" stop-color="#e8c76f" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#e8c76f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="320" height="400" rx="28" fill="url(#heroBg)"/>
+  <circle cx="160" cy="150" r="140" fill="url(#heroGlow)"/>
+
+  <!-- 星屑 -->
+  <g fill="#f5e2ab">
+    <circle cx="40" cy="60" r="2"/>
+    <circle cx="270" cy="90" r="1.6"/>
+    <circle cx="60" cy="320" r="1.6"/>
+    <circle cx="260" cy="330" r="2"/>
+    <circle cx="30" cy="200" r="1.2"/>
+    <circle cx="290" cy="220" r="1.2"/>
+  </g>
+
+  <!-- 人物シルエット -->
+  <circle cx="160" cy="150" r="68" fill="url(#heroFigure)"/>
+  <path d="M88 264 Q160 208 232 264 L252 384 L68 384 Z" fill="url(#heroFigure)"/>
+
+  <!-- 表情 -->
+  <circle cx="134" cy="146" r="7" fill="#4a3a9e"/>
+  <circle cx="186" cy="146" r="7" fill="#4a3a9e"/>
+  <path d="M138 174 Q160 188 182 174" fill="none" stroke="#4a3a9e" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 金の冠モチーフ -->
+  <path d="M118 92 L134 116 L160 78 L186 116 L202 92 L192 132 L128 132 Z" fill="#e8c76f"/>
+
+  <text x="160" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#a89bc9">立ち絵をここに差し替え</text>
+</svg>
