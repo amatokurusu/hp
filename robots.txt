@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amatokurusu.github.io/hp/sitemap.xml

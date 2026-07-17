@@ -147,6 +147,7 @@ section {
   margin-bottom: var(--space-6);
 }
 
+.section-heading h1,
 .section-heading h2 {
   font-family: var(--font-heading);
   font-weight: 600;

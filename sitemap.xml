@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://amatokurusu.github.io/hp/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://amatokurusu.github.io/hp/goods.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amatokurusu.github.io/hp/illustration.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amatokurusu.github.io/hp/fanart.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amatokurusu.github.io/hp/friends.html</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
