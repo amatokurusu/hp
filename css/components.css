@@ -361,16 +361,6 @@
   border-color: transparent;
 }
 
-.x-timeline {
-  max-width: 500px;
-  margin-inline: auto;
-  margin-bottom: var(--space-6);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
-}
-
 .video-embed {
   margin-top: var(--space-6);
   aspect-ratio: 16 / 9;
