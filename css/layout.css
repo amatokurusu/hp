@@ -186,6 +186,13 @@ section {
   gap: var(--space-5);
 }
 
+/* --- FRIENDS一覧はPC幅で3列固定 --- */
+@media (min-width: 900px) {
+  #friends-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* --- グッズ/イラスト/ファンアート セクションの代表カード1枚だけを中央表示 --- */
 .single-preview {
   max-width: 320px;
