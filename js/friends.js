@@ -3,9 +3,10 @@ async function fetchFriends() {
   return res.json();
 }
 
-function renderFriend(item) {
+function renderFriend(item, isNew = false) {
   return `
     <a class="card friend-card reveal" href="${item.link}" target="_blank" rel="noopener noreferrer">
+      ${isNew ? '<span class="new-badge">NEW</span>' : ""}
       <img class="friend-icon" src="${item.icon}" alt="${item.name}">
       <div class="friend-info">
         <p class="friend-name">${item.name}</p>
@@ -57,7 +58,8 @@ export async function initFriendsGallery(containerId) {
       return;
     }
 
-    container.innerHTML = friends.map(renderFriend).join("");
+    // data/friends.json は末尾に追加していく運用なので、配列の最後が最新
+    container.innerHTML = friends.map((item, i) => renderFriend(item, i === friends.length - 1)).join("");
   } catch (err) {
     console.error(err);
     container.innerHTML = `<p class="empty-state">読み込みに失敗しました</p>`;

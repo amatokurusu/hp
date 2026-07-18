@@ -26,9 +26,10 @@ const CATEGORY_PREVIEW_IMAGE_OVERRIDES = {
   illustration: "https://drive.google.com/thumbnail?id=1hxCNDkStykC51Mk1LCDNx49jw9WnpwGY&sz=w800",
 };
 
-function renderGoods(item) {
+function renderGoods(item, isNew = false) {
   const tagLabel = TAG_LABELS[item.tag] ?? item.tag;
   const inner = `
+    ${isNew ? '<span class="new-badge">NEW</span>' : ""}
     <img src="${item.image}" alt="${item.title}" loading="lazy">
     <div class="goods-info">
       <span class="tag ${item.tag}">${tagLabel}</span>
@@ -102,7 +103,10 @@ export async function initGoodsGallery(containerId, tagFilter) {
       return;
     }
 
-    container.innerHTML = filtered.map(renderGoods).join("");
+    // official(JSON手動管理)は配列の最後が最新。illustration/fanart(Drive)は取得時点で新しい順に
+    // 並んでいるので配列の先頭が最新。
+    const newIndex = tagFilter === "official" ? filtered.length - 1 : 0;
+    container.innerHTML = filtered.map((item, i) => renderGoods(item, i === newIndex)).join("");
   } catch (err) {
     console.error(err);
     container.innerHTML = `<p class="empty-state">読み込みに失敗しました</p>`;
