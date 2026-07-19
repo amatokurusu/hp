@@ -22,5 +22,11 @@
     "handle": "今日の運勢を見る",
     "url": "https://amato-fortune.vercel.app/",
     "iconId": "icon-fortune"
+  },
+  {
+    "platform": "GAME",
+    "handle": "くるすあまと Shooting",
+    "url": "https://amato-shooting.vercel.app/",
+    "iconId": "icon-game"
   }
 ]

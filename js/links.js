@@ -3,7 +3,7 @@ import { loadCards } from "./render-cards.js";
 function renderLink(item) {
   return `
     <a class="card link-card reveal" href="${item.url}" target="_blank" rel="noopener noreferrer">
-      <svg class="icon" aria-hidden="true"><use href="assets/img/icons/sprite.svg?v=3#${item.iconId}"></use></svg>
+      <svg class="icon" aria-hidden="true"><use href="assets/img/icons/sprite.svg?v=4#${item.iconId}"></use></svg>
       <span>
         <span class="label">${item.platform}</span>
         <span class="handle">${item.handle}</span>
